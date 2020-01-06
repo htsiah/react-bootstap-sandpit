@@ -1,4 +1,4 @@
-This is a react-sandpit. You can access the application.
+This is a react-sandpit. You can access the application at
 https://romantic-spence-7d3214.netlify.com/
 
 ## Available Scripts
