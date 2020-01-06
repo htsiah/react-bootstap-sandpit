@@ -1,0 +1,5 @@
+# Required by netlift - https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file
+# Redirects from what the browser requests to what we serve
+/examples/counter               /examples/counter
+/examples/fetchrandomuser       /examples/fetchrandomuser
+/examples/ExamplesImageSlider    /examples/ExamplesImageSlider
