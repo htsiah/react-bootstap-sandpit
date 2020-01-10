@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 /**
  * React hooks counter example.
@@ -18,23 +18,20 @@ export function ExamplesCounter() {
   };
 
   useEffect(() => {
-    console.log("mounted");
+    console.log('mounted');
     return () => {
-      console.log("unmount");
+      console.log('unmount');
     };
   }, []);
 
   return (
     <>
+      <h1>ee</h1>
       <h1>React hooks counter example</h1>
+      <p>Learn how to useState (setState) and userEffect (mounted, update and unmount event).</p>
       <p>
-        Learn how to useState (setState) and userEffect (mounted, update and
-        unmount event).
-      </p>
-      <p>
-        When updating the state, you have to use the function set[VariableName]
-        to update the state. You can not update the state through VaribleName =
-        NewValue.
+        When updating the state, you have to use the function set[VariableName] to update the state. You can not update the state through
+        VaribleName = NewValue.
       </p>
       Initial State:
       <pre>
