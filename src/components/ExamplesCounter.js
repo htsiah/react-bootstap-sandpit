@@ -26,7 +26,6 @@ export function ExamplesCounter() {
 
   return (
     <>
-      <h1>ee</h1>
       <h1>React hooks counter example</h1>
       <p>Learn how to useState (setState) and userEffect (mounted, update and unmount event).</p>
       <p>

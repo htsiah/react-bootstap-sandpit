@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 /**
  * React hooks image slider example.
@@ -10,17 +10,16 @@ export function ExamplesImageSlider() {
     {
       id: 0,
       url:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png"
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png'
     },
     {
       id: 1,
-      url:
-        "https://pokemongohub.net/wp-content/uploads/2018/11/Pokemon-Lets-Go-696x356.jpg"
+      url: 'https://pokemongohub.net/wp-content/uploads/2018/11/Pokemon-Lets-Go-696x356.jpg'
     },
     {
       id: 2,
       url:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png"
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png'
     }
   ];
   const [imagesIdx, setImagesIdx] = useState(0);
@@ -38,16 +37,10 @@ export function ExamplesImageSlider() {
   return (
     <>
       <h1>React hooks image slider example</h1>
-      <p>
-        Learn how to useState (setState) and DOM Elements
-        (https://reactjs.org/docs/dom-elements.html).
-      </p>
+      <p>Learn how to useState (setState) and DOM Elements (https://reactjs.org/docs/dom-elements.html).</p>
       <hr></hr>
       <button onClick={backImage}>Back</button>
-      <img
-        style={{ width: 100, height: 100 }}
-        src={ImagesData[imagesIdx].url}
-      />
+      <img style={{ width: 100, height: 100 }} src={ImagesData[imagesIdx].url} alt="" />
       <button onClick={nextImage}>Next</button>
     </>
   );

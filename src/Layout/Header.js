@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -16,6 +15,7 @@ export function Header(props) {
             <NavDropdown.Item href="/examples/counter">Counter</NavDropdown.Item>
             <NavDropdown.Item href="/examples/ExamplesImageSlider">Image Slider</NavDropdown.Item>
             <NavDropdown.Item href="/examples/fetchrandomuser">Fetch Random User</NavDropdown.Item>
+            <NavDropdown.Item href="/examples/ExamplesReactHookForm">React Hook Form</NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>

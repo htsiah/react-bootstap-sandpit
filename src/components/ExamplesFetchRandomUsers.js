@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 /**
  * React fetch json data example.
@@ -10,7 +10,7 @@ export function ExamplesFetchRandomUsers() {
   const [persons, setPersons] = useState([]);
 
   async function fetchData() {
-    const url = "https://api.randomuser.me/?results=5";
+    const url = 'https://api.randomuser.me/?results=5';
     const response = await fetch(url);
     const data = await response.json();
     setPersons(data.results);
@@ -27,10 +27,7 @@ export function ExamplesFetchRandomUsers() {
       <>
         <h1>React fetch json data example</h1>
         <p>Learn how to how to fetch a json data and display to the screen.</p>
-        <p>
-          This example will random fetch five users and display the name and
-          photo.
-        </p>
+        <p>This example will random fetch five users and display the name and photo.</p>
         Loading...
       </>
     );
@@ -41,10 +38,7 @@ export function ExamplesFetchRandomUsers() {
       <>
         <h1>React fetch json data example</h1>
         <p>Learn how to how to fetch a json data and display to the screen.</p>
-        <p>
-          This example will random fetch five users and display the name and
-          photo.
-        </p>
+        <p>This example will random fetch five users and display the name and photo.</p>
         <hr></hr>
         <div>Didn't get user</div>
       </>
@@ -54,21 +48,13 @@ export function ExamplesFetchRandomUsers() {
     <>
       <h1>React fetch json data example</h1>
       <p>Learn how to how to fetch a json data and display to the screen.</p>
-      <p>
-        This example will random fetch five users and display the name and
-        photo.
-      </p>
+      <p>This example will random fetch five users and display the name and photo.</p>
       <hr></hr>
       {persons.map(person => (
         // React required a unique key on each record
         <div key={person.login.uuid}>
-          {person.name.title +
-            " " +
-            person.name.first +
-            " " +
-            person.name.last +
-            " "}
-          <img src={person.picture.large}></img>
+          {person.name.title + ' ' + person.name.first + ' ' + person.name.last + ' '}
+          <img src={person.picture.large} alt={person.name.first + ' ' + person.name.last}></img>
         </div>
       ))}
     </>
