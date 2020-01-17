@@ -20,6 +20,8 @@ export function ExamplesCounter() {
   useEffect(() => {
     console.log('mounted');
     return () => {
+      // This is example.
+      // Execute if the count is change or the component is unmounted.
       console.log('unmount');
     };
   }, []);

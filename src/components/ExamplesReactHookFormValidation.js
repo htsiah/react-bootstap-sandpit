@@ -16,7 +16,7 @@ export default function ExamplesReactHookFormValidation(initialFormValues, Examp
         setIsSubmitting(false);
       }
     }
-  }, [errors]);
+  }, [isSubmitting]);
 
   function handleChange(event) {
     setValues({
