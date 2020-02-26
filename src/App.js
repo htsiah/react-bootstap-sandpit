@@ -1,29 +1,33 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Home } from './components/Home';
-import { NoMatch } from './components/NoMatch';
+import React, { useState, useCallback } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
 import { Layout } from './Layout/Layout';
-import { ExamplesCounter } from './components/ExamplesCounter';
-import { ExamplesFetchRandomUsers } from './components/ExamplesFetchRandomUsers';
-import { ExamplesImageSlider } from './components/ExamplesImageSlider';
-import { ExamplesReactHookForm } from './components/ExamplesReactHookForm';
+import { AuthContext } from './components/shared/context/auth-context';
+import RoutesNoAuth from './RoutesNoAuth';
+import RoutesAuth from './RoutesAuth';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const login = useCallback(() => {
+    setIsLoggedIn(true);
+  }, []);
+
+  const logout = useCallback(() => {
+    setIsLoggedIn(false);
+    window.location.href = '/';
+  }, []);
+
+  // Define route based on isLoggedIn flag.
+  let routes = isLoggedIn ? RoutesAuth : RoutesNoAuth;
+
   return (
-    <>
-      <Layout>
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/examples/counter" component={ExamplesCounter} />
-            <Route exact path="/examples/fetchrandomuser" component={ExamplesFetchRandomUsers} />
-            <Route exact path="/examples/ExamplesImageSlider" component={ExamplesImageSlider} />
-            <Route exact path="/examples/ExamplesReactHookForm" component={ExamplesReactHookForm} />
-            <Route component={NoMatch} />
-          </Switch>
-        </BrowserRouter>
-      </Layout>
-    </>
+    <AuthContext.Provider value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}>
+      {console.log('Call App() - return ' + isLoggedIn)}
+      <BrowserRouter>
+        <Layout>{routes}</Layout>
+      </BrowserRouter>
+    </AuthContext.Provider>
   );
 }
 

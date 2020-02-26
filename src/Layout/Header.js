@@ -1,22 +1,45 @@
-import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+
+import { AuthContext } from '../components/shared/context/auth-context';
 
 export function Header(props) {
+  const auth = useContext(AuthContext);
   return (
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="/">React Sandpit</Navbar.Brand>
+      {auth.isLoggedIn ? (
+        <Navbar.Brand as={Link} to="/home">
+          React Sandpit
+        </Navbar.Brand>
+      ) : (
+        <Navbar.Brand href="/">React Sandpit</Navbar.Brand>
+      )}
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="/">Home</Nav.Link>
-          <NavDropdown title="React Examples" id="basic-nav-dropdown">
-            <NavDropdown.Item href="/examples/counter">Counter</NavDropdown.Item>
-            <NavDropdown.Item href="/examples/ExamplesImageSlider">Image Slider</NavDropdown.Item>
-            <NavDropdown.Item href="/examples/fetchrandomuser">Fetch Random User</NavDropdown.Item>
-            <NavDropdown.Item href="/examples/ExamplesReactHookForm">React Hook Form</NavDropdown.Item>
-          </NavDropdown>
+          {auth.isLoggedIn && (
+            <>
+              <Nav.Link as={Link} to="/home">
+                Home
+              </Nav.Link>
+              <NavDropdown title="React Examples" id="basic-nav-dropdown">
+                <NavDropdown.Item as={Link} to="/examples/counter">
+                  Counter
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/examples/ExamplesImageSlider">
+                  Image Slider
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/examples/fetchrandomuser">
+                  Fetch Random User
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/examples/ExamplesReactHookForm">
+                  React Hook Form
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link onClick={() => auth.logout()}>Logout</Nav.Link>
+            </>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
