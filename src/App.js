@@ -6,8 +6,8 @@ import { AuthContext } from './components/shared/context/auth-context';
 import RoutesNoAuth from './RoutesNoAuth';
 import RoutesAuth from './RoutesAuth';
 
-function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const login = useCallback(() => {
     setIsLoggedIn(true);
@@ -29,6 +29,6 @@ function App() {
       </BrowserRouter>
     </AuthContext.Provider>
   );
-}
+};
 
 export default App;

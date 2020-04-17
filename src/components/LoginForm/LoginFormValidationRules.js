@@ -2,7 +2,7 @@
  * This is where you configure the validation rules
  */
 
-export default function LoginFormValidationRules(values) {
+const LoginFormValidationRules = (values) => {
   let errors = {};
 
   // Email field
@@ -20,4 +20,6 @@ export default function LoginFormValidationRules(values) {
   }
 
   return errors;
-}
+};
+
+export default LoginFormValidationRules;

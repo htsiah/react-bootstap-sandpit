@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
  * Learn how to how to fetch a json data and display to the screen.
  */
 
-export function ExamplesFetchRandomUsers() {
+const ExamplesFetchRandomUsers = () => {
   const [loadingFlag, setLoadingFlag] = useState(true);
   const [persons, setPersons] = useState([]);
 
@@ -50,7 +50,7 @@ export function ExamplesFetchRandomUsers() {
       <p>Learn how to how to fetch a json data and display to the screen.</p>
       <p>This example will random fetch five users and display the name and photo.</p>
       <hr></hr>
-      {persons.map(person => (
+      {persons.map((person) => (
         // React required a unique key on each record
         <div key={person.login.uuid}>
           {person.name.title + ' ' + person.name.first + ' ' + person.name.last + ' '}
@@ -59,4 +59,6 @@ export function ExamplesFetchRandomUsers() {
       ))}
     </>
   );
-}
+};
+
+export default ExamplesFetchRandomUsers;

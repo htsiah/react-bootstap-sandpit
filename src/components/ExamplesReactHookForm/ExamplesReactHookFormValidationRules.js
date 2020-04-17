@@ -2,7 +2,7 @@
  * This is where you configure the validation rules
  */
 
-export default function ExamplesReactHookFormValidationRules(values) {
+const ExamplesReactHookFormValidationRules = (values) => {
   let errors = {};
 
   // Name field
@@ -25,4 +25,6 @@ export default function ExamplesReactHookFormValidationRules(values) {
   }
 
   return errors;
-}
+};
+
+export default ExamplesReactHookFormValidationRules;

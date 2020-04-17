@@ -5,11 +5,11 @@ import LoginFormValidationRules from './LoginFormValidationRules';
 // Initial Fields Value
 const INITIAL_FIELDS_VALUES = {
   email: '',
-  password: ''
+  password: '',
 };
 
-export function LoginForm(props) {
-  const { handleSubmit, handleChange, handleBlur, values, errors, isSubmitting } = LoginFormValidation(
+export const LoginForm = (props) => {
+  const { handleSubmit, handleChange, values, errors, isSubmitting } = LoginFormValidation(
     props,
     INITIAL_FIELDS_VALUES,
     LoginFormValidationRules
@@ -28,8 +28,7 @@ export function LoginForm(props) {
           <div className="col-sm-10">
             <input
               type="email"
-              onChange={e => handleChange(e)}
-              onBlur={handleBlur}
+              onChange={(e) => handleChange(e)}
               value={values.Email}
               className={errors.email ? 'form-control is-invalid' : 'form-control'}
               id="email"
@@ -46,8 +45,7 @@ export function LoginForm(props) {
           <div className="col-sm-10">
             <input
               type="password"
-              onChange={e => handleChange(e)}
-              onBlur={handleBlur}
+              onChange={(e) => handleChange(e)}
               value={values.Password}
               className={errors.password ? 'form-control is-invalid' : 'form-control'}
               id="password"
@@ -64,4 +62,4 @@ export function LoginForm(props) {
       </form>
     </>
   );
-}
+};

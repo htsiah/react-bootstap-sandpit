@@ -36,6 +36,9 @@ export function Header(props) {
                 <NavDropdown.Item as={Link} to="/examples/ExamplesReactHookForm">
                   React Hook Form
                 </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/examples/ExamplesReactLazyLoad">
+                  React Image Lazy Load
+                </NavDropdown.Item>
               </NavDropdown>
               <Nav.Link onClick={() => auth.logout()}>Logout</Nav.Link>
             </>

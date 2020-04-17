@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import { AuthContext } from '../shared/context/auth-context';
 
-export default function LoginFormValidation(props, initialFormValues, LoginFormValidationRules) {
+const LoginFormValidation = (props, initialFormValues, LoginFormValidationRules) => {
   const auth = useContext(AuthContext);
   const [values, setValues] = React.useState(initialFormValues);
   const [errors, setErrors] = React.useState({});
@@ -25,12 +25,8 @@ export default function LoginFormValidation(props, initialFormValues, LoginFormV
   function handleChange(event) {
     setValues({
       ...values,
-      [event.target.name]: event.target.value // use the bracket surrounding the event.target.name to dynamically change the property.
+      [event.target.name]: event.target.value, // use the bracket surrounding the event.target.name to dynamically change the property.
     });
-  }
-
-  function handleBlur() {
-    setErrors(LoginFormValidationRules(values));
   }
 
   function handleSubmit(event) {
@@ -41,5 +37,7 @@ export default function LoginFormValidation(props, initialFormValues, LoginFormV
     // If there is error, no submit.
   }
 
-  return { handleSubmit, handleChange, handleBlur, values, errors, isSubmitting };
-}
+  return { handleSubmit, handleChange, values, errors, isSubmitting };
+};
+
+export default LoginFormValidation;

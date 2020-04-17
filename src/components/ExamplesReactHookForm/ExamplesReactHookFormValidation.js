@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ExamplesReactHookFormValidation(initialFormValues, ExamplesReactHookFormValidationRules) {
+const ExamplesReactHookFormValidation = (initialFormValues, ExamplesReactHookFormValidationRules) => {
   const [values, setValues] = React.useState(initialFormValues);
   const [errors, setErrors] = React.useState({});
   const [isSubmitting, setIsSubmitting] = React.useState(false);
@@ -21,7 +21,7 @@ export default function ExamplesReactHookFormValidation(initialFormValues, Examp
   function handleChange(event) {
     setValues({
       ...values,
-      [event.target.name]: event.target.value // use the bracket surrounding the event.target.name to dynamically change the property.
+      [event.target.name]: event.target.value, // use the bracket surrounding the event.target.name to dynamically change the property.
     });
   }
 
@@ -38,4 +38,6 @@ export default function ExamplesReactHookFormValidation(initialFormValues, Examp
   }
 
   return { handleSubmit, handleChange, handleBlur, values, errors, isSubmitting };
-}
+};
+
+export default ExamplesReactHookFormValidation;

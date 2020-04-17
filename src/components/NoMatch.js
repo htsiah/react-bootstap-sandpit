@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-export function NoMatch() {
+export const NoMatch = () => {
   return (
     <>
       <h1>No Match</h1>
     </>
   );
-}
+};

@@ -12,25 +12,25 @@ import React, { useState, useEffect, useMemo } from 'react';
  * You can not update the state through VaribleName = NewValue.
  */
 
-const callconsole = text => {
+const callconsole = (text) => {
   console.log(text);
 };
 
-export function ExamplesCounter() {
+const ExamplesCounter = () => {
   // This is an example how to set initial value using function.
   // Without function, you do it like this:  const [count, setCount] = useState(0);
   const initialCount = () => {
     console.log('Call');
     return 0;
   };
-  const [count, setCount] = useState(() => initialCount());
+  const [count, setCount] = useState(() => initialCount(0));
 
   const increaseCount = () => {
-    setCount(prevMode => prevMode + 1);
+    setCount((prevMode) => prevMode + 1);
   };
 
   const decreaseCount = () => {
-    setCount(prevMode => prevMode - 1);
+    setCount((prevMode) => prevMode - 1);
   };
 
   useEffect(() => {
@@ -90,4 +90,6 @@ export function ExamplesCounter() {
       {displayConsole}
     </>
   );
-}
+};
+
+export default ExamplesCounter;

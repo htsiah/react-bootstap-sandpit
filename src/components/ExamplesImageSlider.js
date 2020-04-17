@@ -5,22 +5,22 @@ import React, { useState } from 'react';
  * Learn how to useState (setState).
  * In this example, you learn special props - style.
  */
-export function ExamplesImageSlider() {
+const ExamplesImageSlider = () => {
   const ImagesData = [
     {
       id: 0,
       url:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png'
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png',
     },
     {
       id: 1,
-      url: 'https://pokemongohub.net/wp-content/uploads/2018/11/Pokemon-Lets-Go-696x356.jpg'
+      url: 'https://pokemongohub.net/wp-content/uploads/2018/11/Pokemon-Lets-Go-696x356.jpg',
     },
     {
       id: 2,
       url:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png'
-    }
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png',
+    },
   ];
   const [imagesIdx, setImagesIdx] = useState(0);
   const nextImage = () => {
@@ -44,4 +44,6 @@ export function ExamplesImageSlider() {
       <button onClick={nextImage}>Next</button>
     </>
   );
-}
+};
+
+export default ExamplesImageSlider;

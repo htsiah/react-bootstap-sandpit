@@ -11,10 +11,10 @@ import ExamplesReactHookFormValidationRules from './ExamplesReactHookFormValidat
 const INITIAL_FIELDS_VALUES = {
   email: '',
   password: '',
-  name: ''
+  name: '',
 };
 
-export function ExamplesReactHookForm() {
+const ExamplesReactHookForm = () => {
   const { handleSubmit, handleChange, handleBlur, values, errors, isSubmitting } = ExamplesReactHookFormValidation(
     INITIAL_FIELDS_VALUES,
     ExamplesReactHookFormValidationRules
@@ -68,7 +68,7 @@ export function ExamplesReactHookForm() {
           <div className="col-sm-10">
             <input
               type="email"
-              onChange={e => handleChange(e)}
+              onChange={(e) => handleChange(e)}
               onBlur={handleBlur}
               value={values.Email}
               className={errors.email ? 'form-control is-invalid' : 'form-control'}
@@ -86,7 +86,7 @@ export function ExamplesReactHookForm() {
           <div className="col-sm-10">
             <input
               type="password"
-              onChange={e => handleChange(e)}
+              onChange={(e) => handleChange(e)}
               onBlur={handleBlur}
               value={values.Password}
               className={errors.password ? 'form-control is-invalid' : 'form-control'}
@@ -104,4 +104,6 @@ export function ExamplesReactHookForm() {
       </form>
     </>
   );
-}
+};
+
+export default ExamplesReactHookForm;
